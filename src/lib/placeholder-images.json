@@ -1,3 +1,28 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-1",
+      "description": "A woman confidently speaking at a podium, embodying leadership.",
+      "imageUrl": "https://images.unsplash.com/photo-1761258772183-6a905c8b95fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxsZWFkZXJzaGlwJTIwY29hY2hpbmd8ZW58MHx8fHwxNzY4NjMwMjU5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "leadership coaching"
+    },
+    {
+      "id": "podcast-1",
+      "description": "Abstract image for a podcast about resilience.",
+      "imageUrl": "https://images.unsplash.com/photo-1764990189201-8025ff64d981?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMHJlc2lsaWVuY2V8ZW58MHx8fHwxNzY4NjMwMjU5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract resilience"
+    },
+    {
+      "id": "podcast-2",
+      "description": "Abstract image for a podcast about communication.",
+      "imageUrl": "https://images.unsplash.com/photo-1596754777925-043dc3084b35?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMGNvbW11bmljYXRpb258ZW58MHx8fHwxNzY4NjMwMjU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract communication"
+    },
+    {
+      "id": "podcast-3",
+      "description": "Abstract image for a podcast about innovation.",
+      "imageUrl": "https://images.unsplash.com/photo-1768034828543-87c217dfaaab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxhYnN0cmFjdCUyMGlubm92YXRpb258ZW58MHx8fHwxNzY4NjMwMjU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract innovation"
+    }
+  ]
 }
