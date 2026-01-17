@@ -22,52 +22,58 @@ const Header = () => {
 
   const toggleLanguage = () => {
     const newLang = currentLang === "en" ? "fr" : "en";
+    // Replace the language segment in the current path
     const newPath = pathname.replace(`/${currentLang}`, `/${newLang}`);
     router.push(newPath);
   };
 
   const navLinks = {
     en: {
-      training: "Training",
-      coaching: "Coaching",
+      about: "About",
+      blog: "Blog",
       podcast: "Podcast",
       book: "Book Consultation",
     },
     fr: {
-      training: "Formation",
-      coaching: "Coaching",
+      about: "À Propos",
+      blog: "Blog",
       podcast: "Podcast",
-      book: "Réserver une consultation",
+      book: "Réserver",
     },
   };
 
   const t = navLinks[currentLang as keyof typeof navLinks] || navLinks.en;
+
+  const isActive = (path: string) => pathname === `/${currentLang}${path}`;
 
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-500 border-b ${scrolled ? "bg-white/95 backdrop-blur-sm border-gray-200 py-4 shadow-sm" : "bg-white border-transparent py-6"}`}
     >
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
-        <div className="font-serif text-2xl font-bold tracking-tight text-brand-dark">
+        <Link
+          href={`/${currentLang}`}
+          className="font-serif text-2xl font-bold tracking-tight text-brand-dark"
+        >
           Laura<span className="text-brand-primary">Ballo</span>
-        </div>
+        </Link>
 
         <div className="hidden md:flex items-center gap-8 text-xs font-bold tracking-widest uppercase text-gray-500">
           <Link
-            href={`/${currentLang}#services`}
-            className="hover:text-brand-primary transition-colors"
+            href={`/${currentLang}/about`}
+            className={`transition-colors hover:text-brand-primary ${isActive("/about") ? "text-brand-primary" : ""}`}
           >
-            {t.training}
+            {t.about}
           </Link>
           <Link
-            href={`/${currentLang}#coaching`}
-            className="hover:text-brand-primary transition-colors"
+            href={`/${currentLang}/blog`}
+            className={`transition-colors hover:text-brand-primary ${isActive("/blog") ? "text-brand-primary" : ""}`}
           >
-            {t.coaching}
+            {t.blog}
           </Link>
           <Link
-            href={`/${currentLang}#podcast`}
-            className="hover:text-brand-primary transition-colors"
+            href={`/${currentLang}/podcast`}
+            className={`transition-colors hover:text-brand-primary ${isActive("/podcast") ? "text-brand-primary" : ""}`}
           >
             {t.podcast}
           </Link>
