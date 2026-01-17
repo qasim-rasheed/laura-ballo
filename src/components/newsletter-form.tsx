@@ -1,24 +1,25 @@
-'use client';
+"use client";
 
-import { useFormState, useFormStatus } from 'react-dom';
-import { useEffect } from 'react';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { useToast } from '@/hooks/use-toast';
-import { subscribeToNewsletter } from '@/app/actions';
-import { useLanguage } from '@/contexts/language-provider';
-import { content } from '@/lib/content';
-import { ArrowRight, Loader } from 'lucide-react';
+import { useFormStatus } from "react-dom";
+import React from "react";
+import { useEffect } from "react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
+import { subscribeToNewsletter } from "@/app/actions";
+import { useLanguage } from "@/contexts/language-provider";
+import { content } from "@/lib/content";
+import { ArrowRight, Loader } from "lucide-react";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
   const { language } = useLanguage();
   const t = content[language].newsletter.form;
-  
+
   return (
-    <Button 
-      type="submit" 
-      disabled={pending} 
+    <Button
+      type="submit"
+      disabled={pending}
       size="lg"
       className="rounded-r-full rounded-l-none text-base font-bold group bg-accent hover:bg-accent/90 text-accent-foreground"
     >
@@ -38,17 +39,17 @@ export function NewsletterForm() {
   const { language } = useLanguage();
   const t = content[language].newsletter.form;
   const { toast } = useToast();
-  const [state, formAction] = useFormState(subscribeToNewsletter, {
-    message: '',
+  const [state, formAction] = React.useActionState(subscribeToNewsletter, {
+    message: "",
     success: false,
   });
 
   useEffect(() => {
     if (state.message) {
       toast({
-        title: state.success ? 'Success!' : 'Oops!',
+        title: state.success ? "Success!" : "Oops!",
         description: state.message,
-        variant: state.success ? 'default' : 'destructive',
+        variant: state.success ? "default" : "destructive",
       });
     }
   }, [state, toast]);
